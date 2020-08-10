@@ -5,7 +5,7 @@ The user is then presented with easy to read information about the city and some
 
 It also presents with availble tours in that city, average cost and option to book them if interested.
 
-
+![](images/destinationApp.png)
 
 Click on the link below for an easy access to the application:
 
