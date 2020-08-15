@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/destination_db", { useNewUrlParser: true, useUnifiedTopology: true }); //Brandon_Added
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://harpreet:mongo1313@ds041678.mlab.com:41678/heroku_5kttgx8w", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:password1@ds041678.mlab.com:41678/heroku_5kttgx8w", { useNewUrlParser: true, useUnifiedTopology: true });
 // Define API routes here
 
 // Send every other request to the React app
