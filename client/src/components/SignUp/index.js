@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 //import { Link } from "@reach/router";
-import {auth, generateUserDocument} from "../../firebase";
+import { auth, generateUserDocument } from "../../firebase";
 import { Button, Form } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-  const SignUp = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
-  
+
 
   const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
     event.preventDefault();
-    try{
-      const {user} = await auth.createUserWithEmailAndPassword(email, password);
-      generateUserDocument(user, {displayName});
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+      generateUserDocument(user, { displayName });
     }
-    catch(error){
+    catch (error) {
       setError('Error Signing up with email and password');
     }
 
@@ -39,34 +39,34 @@ import { Link } from "react-router-dom";
 
   return (
     <Form className="text-3xl mb-2 text-center font-bold">
-    <div className="mt-8">
-      <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
-        {error !== null && (
-          <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
-            {error}
-          </div>
-        )}
-        
-        {/* <form className="">
+      <div className="mt-8">
+        <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
+          {error !== null && (
+            <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
+              {error}
+            </div>
+          )}
+
+          {/* <form className="">
           <label htmlFor="displayName" className="block">
             Display Name:
           </label> */}
-                <h3 className="text-3xl mb-2 text-center font-bold">Sign Up</h3>
+          <h3 className="text-3xl mb-2 text-center font-bold">Sign Up</h3>
 
-          <Form.Label>Display Name</Form.Label>{" "}
-          
+          <Form.Label>Name</Form.Label>{" "}
+
           <input
             type="text"
             className="my-1 p-1 w-full "
             name="displayName"
             value={displayName}
-            placeholder="E.g: Celeste"
+            placeholder="Your Name"
             id="displayName"
             onChange={event => onChangeHandler(event)}
           />
           {/* <label htmlFor="userEmail" className="block">
             Email:
-          </label> */} 
+          </label> */}
           {" "}<br></br>{" "}
           <Form.Label>Email Address</Form.Label>{" "}
           <input
@@ -74,7 +74,7 @@ import { Link } from "react-router-dom";
             className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: celeste@gmail.com"
+            placeholder="youremail@gmail.com"
             id="userEmail"
             onChange={event => onChangeHandler(event)}
           />
@@ -88,32 +88,32 @@ import { Link } from "react-router-dom";
             className="mt-1 mb-3 p-1 w-full"
             name="userPassword"
             value={password}
-            placeholder="Your Password"
+            placeholder="Password"
             id="userPassword"
             onChange={event => onChangeHandler(event)}
           />
-                    {" "}<br></br>{" "}
+          {" "}<br></br>{" "}
 
           <Button variant="outline-primary" type="submit"
-            // onClick={event => {
-            //   createUserWithEmailAndPasswordHandler(event, email, password);
-            // }}>
+          // onClick={event => {
+          //   createUserWithEmailAndPasswordHandler(event, email, password);
+          // }}>
           ><Link to="/Quiz">Sign up</Link>
           </Button>
 
-        <p className="text-center my-3">
-          Don't have an account?{" "}
-          <Link to="signUp" className="text-blue-500 hover:text-blue-600">
-            Sign up here
+          <p className="text-center my-3">
+            Don't have an account?{" "}
+            <Link to="signUp" className="text-blue-500 hover:text-blue-600">
+              Sign up here
           </Link>{" "}
-          <br />{" "}
-          <Link to = "passwordReset" className="text-blue-500 hover:text-blue-600">
-          {" "}Forgot Password?
+            <br />{" "}
+            <Link to="passwordReset" className="text-blue-500 hover:text-blue-600">
+              {" "}Forgot Password?
           </Link>
-        </p>
+          </p>
 
+        </div>
       </div>
-    </div>
     </Form>
   );
 };

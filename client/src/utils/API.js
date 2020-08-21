@@ -10,21 +10,6 @@ export default {
 		const queryUrl = `${triposoUrl}?id=${city}&account=${process.env.REACT_APP_ACCOUNT}&token=${process.env.REACT_APP_TOKEN}`;
 		return axios.get(queryUrl);
 	},
-	getQuestions: function () {
-		return axios.get("/api/questions");
-	},
-	getQuestion: function(id) {
-		return axios.get("/api/questions/" + id);
-	  },
-	  // Deletes the Question with the given id
-	  deleteQuestion: function(id) {
-		return axios.delete("/api/questions/" + id);
-	  },
-	  // Saves a Question to the database
-	  saveQuestion: function(questionData) {
-		return axios.post("/api/questions", questionData);
-	},
-
 
 	fetchTour: function (city) {
 
@@ -36,4 +21,22 @@ export default {
 			.get(tourQueryUrl)
 
 	},
+
+	getQuestions: function () {
+		return axios.get("/api/questions");
+	},
+	getQuestion: function (id) {
+		return axios.get("/api/questions/" + id);
+	},
+	// Deletes the Question with the given id
+	deleteQuestion: function (id) {
+		return axios.delete("/api/questions/" + id);
+	},
+	// Saves a Question to the database
+	saveQuestion: function (questionData) {
+		return axios.post("/api/questions", questionData);
+	},
+
+
+
 };

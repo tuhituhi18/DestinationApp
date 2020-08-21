@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose"); //Brandon_Added
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,8 +12,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/destination_db", { useNewUrlParser: true, useUnifiedTopology: true }); //Brandon_Added
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:password1@ds041678.mlab.com:41678/heroku_5kttgx8w", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/destination_db", { useNewUrlParser: true, useUnifiedTopology: true });
+
 // Define API routes here
 
 // Send every other request to the React app

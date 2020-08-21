@@ -2,15 +2,28 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: 'AIzaXXXXXXXXXXXXXXXXXXXXXXX',
-  authDomain: 'test-XXXX.firebaseapp.com',
-  databaseURL: 'https://test-XXXXXX.firebaseio.com',
-  projectId: 'test-XXXX',
-  storageBucket: 'test-XXXX.appspot.com',
-  messagingSenderId: 'XXXXXXX',
-  appId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+var firebaseConfig = {
+  apiKey: "api-key",
+  authDomain: "project-id.firebaseapp.com",
+  databaseURL: "https://project-id.firebaseio.com",
+  projectId: "project-id",
+  storageBucket: "project-id.appspot.com",
+  messagingSenderId: "sender-id",
+  appId: "app-id",
+  measurementId: "G-measurement-id",
 };
+
+
+// const firebaseConfig = {
+//   apiKey: 'AIzaXXXXXXXXXXXXXXXXXXXXXXX',
+//   authDomain: 'test-XXXX.firebaseapp.com',
+//   databaseURL: 'https://test-XXXXXX.firebaseio.com',
+//   projectId: 'test-XXXX',
+//   storageBucket: 'test-XXXX.appspot.com',
+//   messagingSenderId: 'XXXXXXX',
+//   appId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+// };
+
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -58,13 +71,3 @@ const getUserDocument = async uid => {
 };
 
 
-// var firebaseConfig = {
-//     apiKey: "AIzaSyC8aLxjBPu4DWUP6LaKaKNqKPX4ysy6d7k",
-//     authDomain: "destinyapp-a90ef.firebaseapp.com",
-//     databaseURL: "https://destinyapp-a90ef.firebaseio.com",
-//     projectId: "destinyapp-a90ef",
-//     storageBucket: "destinyapp-a90ef.appspot.com",
-//     messagingSenderId: "640223780524",
-//     appId: "1:640223780524:web:84e0fa7976538b3b5b4909",
-//     measurementId: "G-H38GFRBC2Y"
-//   };

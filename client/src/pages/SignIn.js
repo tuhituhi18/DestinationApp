@@ -1,5 +1,5 @@
 import React from "react";
-//import Form from "../components/Firebase";
+import Form from "../components/Firebase";
 
 
 function SignIn() {
