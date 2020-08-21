@@ -9,4 +9,4 @@ It also presents with availble tours in that city, average cost and option to bo
 
 Click on the link below for an easy access to the application:
 
-https://fierce-escarpment-58050.herokuapp.com/
+https://destinysuggestions.herokuapp.com/
