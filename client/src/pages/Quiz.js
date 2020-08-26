@@ -48,14 +48,11 @@ function Quiz(props) {
                   bestStreak = currentStreak;
                   bestElem = currentElem;
                 }
-          
                 currentStreak = 0;
                 currentElem = a[i];
               }
-          
               currentStreak++;
             }
-          
             return currentStreak > bestStreak ? currentElem : bestElem;
           };
           console.log(mode(choices));
@@ -70,13 +67,12 @@ function Quiz(props) {
                     break;
                 default: props.history.push('/Destination/Los_Angeles/')
                     break;
-                
             }  
     }
     return (
         <Row>
             <Col size="md-12">
-                <div >
+                <div>
                     {questions.map((question,i) =>  (
                         <div key={i}>
                             <MultiChoiceCard

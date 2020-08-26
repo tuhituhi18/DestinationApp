@@ -5,8 +5,8 @@ import {Button, ButtonToolbar, ButtonGroup, Card} from "react-bootstrap";
 
 function MultiChoiceCard(props) {
    return (
-   <Card >
-      <Card.Body>
+   <Card style= {{background: "#2E8BC0", border: "none"}}>
+      <Card.Body style= {{color: "white"}}>
          <h3 style={{display: "flex",  justifyContent:"center", alignItems:"center"}}>{props.question}</h3>
             <ButtonToolbar size="lg" className="mb-2" style={{display: "flex", justifyContent:"center", alignItems:"center"}}>
                {props.answers.map((answer,i)=>{

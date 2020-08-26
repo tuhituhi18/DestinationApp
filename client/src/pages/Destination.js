@@ -30,7 +30,7 @@ function Destination() {
     }, [])
     if (state.images, tour.name) {
         return (
-            <div>
+            <div style= {{color: "white"}}>
                 <Alert.Heading>Your Next Destination is...</Alert.Heading>
                 <h2>{state.id}, {state.parent_id} </h2>
                 <hr />
@@ -41,26 +41,23 @@ function Destination() {
                 </Col>
                 <h5>{state.snippet}</h5>
                 <br></br>
-                <Card>
+                <Card style= {{background: "#003060"}}>
                 <Card.Header as="h5">Available Tours in {state.id}</Card.Header>
                 <Card.Body>
                     <Card.Title>Tour : {tour.name}</Card.Title>
                     <Card.Text>
                     Price: ${tour.price.amount * 1.15.toFixed(0)}
                     </Card.Text>
-                    <Button variant="info" href={tour.vendor_tour_url} target="_blank">Click for more Info</Button>
+                    <Button style= {{background: "#145DA0"}} href={tour.vendor_tour_url} target="_blank">Click for more Info</Button>
                 </Card.Body>
                 </Card>
                 <br></br>
                 
-        <Link to="/Destination"
-        >
+        <Link to="/Destination">
           &larr; Back to View More Cities
         </Link>
-            </div >
-
-    
-
+            </div>
+            
 
         )
     }

@@ -6,27 +6,27 @@ import { Navbar, Nav} from 'react-bootstrap';
 function NavTabs(props) {
 
   return (
-<Navbar style= {{background: "linear-gradient(#68BBE3,#003060)"}}>
-  <Navbar.Brand style= {{color: "white"}} href="/">Destiny</Navbar.Brand>
+<Navbar style= {{background: "#003060"}}>
+  <Navbar.Brand style= {{color: "white", fontSize: "40px", fontFamily: "'Poppins', sans-serif"}} href="/">Destiny</Navbar.Brand>
     <Nav className="mr-auto" >
-      <ul className="nav nav-tabs" >
+      <ul className="nav nav-tabs">
         <li className="nav-item">
-            <Link to="/Home" className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}>
+            <Link to="/Home" className={props.currentPage === "Home" ? "nav-link active" : "nav-link"} style= {{color: "white"}}>
               Home
             </Link>
         </li>
         <li className="nav-item">
-              <Link to="/Quiz"className={props.currentPage === "Quiz" ? "nav-link active" : "nav-link"}>
+              <Link to="/Quiz"className={props.currentPage === "Quiz" ? "nav-link active" : "nav-link"} style= {{color: "white"}}>
                 Quiz
               </Link>
         </li>
         <li className="nav-item">
-              <Link to="/Destination" className={props.currentPage === "Destination" ? "nav-link active" : "nav-link"}>
+              <Link to="/Destination" className={props.currentPage === "Destination" ? "nav-link active" : "nav-link"} style= {{color: "white"}}>
                 Destination
               </Link>
         </li>
         <li className="nav-item">
-              <Link to="/Contact" className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"}>
+              <Link to="/Contact" className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"} style= {{color: "white"}}>
                 Contact Us
               </Link>
         </li>

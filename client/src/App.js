@@ -22,7 +22,7 @@ class App extends Component {
 render() {
   return (
 <Router>
-  <Container style= {{background: "#0E86D4"}}> {/* firebase code <Application></Application>*/}{/* nav code */}
+  <Container > {/* firebase code <Application></Application>*/}{/* nav code */}
       <NavTabs />
         <Switch>
           
