@@ -18,44 +18,41 @@ import { Col, Row, Container } from 'react-bootstrap';
 class App extends Component {
   constructor(props) {
     super(props);
-
   }
-  render() {
-    return (
-      <Router>
-        <Container>
-          {/* firebase code 
-          <Application></Application>*/}
-          {/* nav code */}
-          <NavTabs />
-          <Switch>
-            <Route exact path={["/", "/Home"]}>
-              <UserProvider>
-                <Application />
-              </UserProvider>
-            </Route>
+render() {
+  return (
+<Router>
+  <Container style= {{background: "#0E86D4"}}> {/* firebase code <Application></Application>*/}{/* nav code */}
+      <NavTabs />
+        <Switch>
+          
+          <Route exact path={["/", "/Home"]}>
+            <UserProvider>
+                <Application/>
+            </UserProvider>
+          </Route>
+    
+          <Route exact path="/Quiz">
+            <Quiz/>
+          </Route>
+    
+          <Route exact path="/Destination">
+            <ListOfCities />
+          </Route>
+    
+          <Route exact path="/Destination/:city">
+            <Destination />
+          </Route>
+    
+          <Route exact path="/Contact">
+            <Contact />
+          </Route>
 
-            <Route exact path="/Quiz">
-              <Quiz />
-            </Route>
-            <Route exact path="/Destination">
-              <ListOfCities />
-            </Route>
-            <Route exact path="/Destination/:city">
-              <Destination />
-
-            </Route>
-
-            <Route exact path="/Contact">
-              <Contact />
-            </Route>
-          </Switch>
-
-        </Container >
-      </Router >
-
-    );
-  }
+        </Switch>
+  </Container >
+</Router >
+  );
+}
 }
 
 export default App;

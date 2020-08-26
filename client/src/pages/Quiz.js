@@ -5,14 +5,6 @@ import MultiChoiceCard from "../components/MultiChoiceCard";
 import { withRouter } from 'react-router-dom'
 import {Col, Row, } from 'react-bootstrap';
 
-// const Button = withRouter(({ history }) => (
-//   <button
-//     type='button'
-//     onClick={() => { history.push('/new-location') }}
-//   >
-//     Click Me!
-//   </button>
-// ))
 
 function Quiz(props) {
     const [questions, setQuestions] = useState([])
@@ -24,8 +16,9 @@ function Quiz(props) {
 
     useEffect(() => {
         console.log(choices)
-        if(choices.length===5)
-        {switchCase()}
+        if(choices.length===5){
+            switchCase()
+        }
     }, [choices])
 
     function loadQuestions() {
@@ -37,35 +30,62 @@ function Quiz(props) {
             .catch(err => console.log(err));
     };
     function loadChoices (event){
-        console.log(event.target.textContent)
-        setChoices([...choices,event.target.textContent])
+        console.log(event.target.alt)
+        setChoices([...choices,event.target.alt])
     }
 
     function switchCase(){
         console.log(choices)
-        props.history.push('/Destination/New_Orleans/')
-        
+        var mode = a => {          
+            var bestStreak = 1;
+            var bestElem = a[0];
+            var currentStreak = 1;
+            var currentElem = a[0];
+          
+            for (let i = 1; i < a.length; i++) {
+              if (a[i-1] !== a[i]) {
+                if (currentStreak > bestStreak) {
+                  bestStreak = currentStreak;
+                  bestElem = currentElem;
+                }
+          
+                currentStreak = 0;
+                currentElem = a[i];
+              }
+          
+              currentStreak++;
+            }
+          
+            return currentStreak > bestStreak ? currentElem : bestElem;
+          };
+          console.log(mode(choices));
+            switch(mode(choices)){
+                case "1": props.history.push('/Destination/Dallas/')
+                    break;
+                case "2": props.history.push('/Destination/New_Orleans/')
+                    break;
+                case "3": props.history.push('/Destination/Boston/') 
+                    break;
+                case "4": props.history.push('/Destination/Denver/')
+                    break;
+                default: props.history.push('/Destination/Los_Angeles/')
+                    break;
+                
+            }  
     }
-    
-
     return (
         <Row>
             <Col size="md-12">
                 <div >
-                {questions.map((question,i) =>  (
-                <div key={i}>
-                    
-
-                <MultiChoiceCard 
-                  answers={question.answers}
-                  question={question.question}
-                  loadChoices= {loadChoices}
-                
-                    />
-                    </div>
-                ))}
-                
-                
+                    {questions.map((question,i) =>  (
+                        <div key={i}>
+                            <MultiChoiceCard
+                                answers={question.answers}
+                                question={question.question}
+                                loadChoices= {loadChoices}
+                            />
+                        </div>
+                    ))}
                 </div>
             </Col>
         </Row>

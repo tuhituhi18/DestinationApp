@@ -17,7 +17,7 @@ function ListOfCities() {
             <h1 style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                 Click on the city for your next adventure!</h1>
                 <br></br>
-<Row>
+<Row style= {{color: "white"}}>
     <Col>    
                 <Link to="/Destination/Boston">
                     <Button variant="info" size="lg">Boston <br></br>

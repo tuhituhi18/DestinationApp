@@ -29,7 +29,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div>
-        <NavTabs
+        <NavTabs 
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}
         />
