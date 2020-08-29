@@ -36,9 +36,10 @@ function Destination() {
                 <hr />
                 <Col >
                 <img src={state.images[0].source_url} rounded 
-                style={{ height: "50%", width: "80%" }} 
+                style={{ height: "50%", width: "80%",position:"relative" }} 
                 />
                 </Col>
+                <br></br>
                 <h5>{state.snippet}</h5>
                 <br></br>
                 <Card style= {{background: "#003060"}}>
@@ -53,12 +54,15 @@ function Destination() {
                 </Card>
                 <br></br>
                 
-        <Link to="/Destination">
+        <Link to="/Destination" style={{color:"white",fontSize: "20px"}}>
           &larr; Back to View More Cities
         </Link>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
             </div>
             
-
         )
     }
     else { return (
