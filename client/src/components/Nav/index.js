@@ -12,22 +12,22 @@ function NavTabs(props) {
     <Nav className="mr-auto" >
       <ul className="nav nav-tabs" >
         <li className="nav-item" >
-            <Link to="/Home" className={props.currentPage === "Home" ? "nav-link active" : "nav-link"} style={{color: "white"}}  >
+            <Link to="/Home" className={props.currentPage === "Home" ? "nav-link active" : "nav-link"} style={{color: "white"}} >
               Home
             </Link>
         </li>
         <li className="nav-item">
-              <Link to="/Quiz"className={props.currentPage === "Quiz" ? "nav-link active" : "nav-link"} style={{color: "white"}} >
+              <Link to="/Quiz"className={props.currentPage === "Quiz" ? "nav-link active" : "nav-link"} style={{color: "white"}}>
                 Quiz
               </Link>
         </li>
         <li className="nav-item">
-              <Link to="/Destination" className={props.currentPage === "Destination" ? "nav-link active" : "nav-link"} style={{color: "white"}} >
+              <Link to="/Destination" className={props.currentPage === "Destination" ? "nav-link active" : "nav-link"} style={{color: "white"}}>
                 Destination
               </Link>
         </li>
         <li className="nav-item">
-              <Link to="/Contact" className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"} style={{color: "white"}} >
+              <Link to="/Contact" className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"} style={{color: "white"}}>
                 Contact Us
               </Link>
         </li>

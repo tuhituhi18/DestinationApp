@@ -25,8 +25,9 @@ function ListOfCities() {
     return (
         <div >
             <br></br>
-            <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , color: "white"}}>
-                Click on the city for your next adventure!</h1>
+            <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , color: "white",fontStyle: "italic"}}>
+                Find Your Destiny!
+            </h1>
             <br></br>
             <Row>
                 <Col>
